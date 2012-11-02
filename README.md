@@ -1,4 +1,4 @@
-NTU
+School
 ===
 
-Students would face many issues when studying. Why not run our study as a project?
+This repository is used to handle school business with clear milestone.
