@@ -7,4 +7,9 @@
   - **Combiner**: A procedure that combines output data of mapper at a local machine before sending to shuffler.
 
 ### Analytics Overview
+1. 
+  - **Supervised Learning**: Learning from `labeled data` only.
+  - **Unsupervised Learning**: Learning from `unlabeled data` only.
+  - **Semi-supervised Learning**: Learning from both labeled (usually little) and unlabeled data.
+
 ### Clustering
