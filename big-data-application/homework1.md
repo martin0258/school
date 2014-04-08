@@ -11,5 +11,6 @@
   - **Supervised Learning**: Learning from `labeled data` only.
   - **Unsupervised Learning**: Learning from `unlabeled data` only.
   - **Semi-supervised Learning**: Learning from both labeled (usually little) and unlabeled data.
+2. Because the outcome of tossing a coin is random (assume it is a fair coin).
 
 ### Clustering
