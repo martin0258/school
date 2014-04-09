@@ -18,12 +18,12 @@
   - **Regression Problem**: The type of prediction target is real value.
 
 ### Clustering
-1. 
+Problem 1.  
 
 Initial centers: center 1 is (1, 1); center 2 is (4, 2)  
 Iteration 1:
 
-Point | Distance to center 1 (1, 1) | Distance to center 2 (4, 2) | Nearest
+Point | Distance to center 1 | Distance to center 2 | Nearest
 ------|-----------------------------|-----------------------------|---------
 (1,1) | 0 | sqrt(10) | center 1
 (1,3) | sqrt(4) | sqrt(10) | center 1
@@ -42,7 +42,7 @@ New center 2: (3 + 3 + 3 + 3 + 4 + 4, 1 + 2 + 3 + 5 + 2 + 4) / 6 = (10/3, 17/6)
 
 Iteration 2:
 
-Point | Distance to center 1 (4/3, 2) | Distance to center 2 (10/3, 17/6) | Nearest
+Point | Distance to center 1 | Distance to center 2 | Nearest
 ------|-----------------------------|-----------------------------|---------
 (1,1) | 1.05 | 2.97 | center 1
 (1,3) | 1.05 | 2.34 | center 1
@@ -56,3 +56,13 @@ Point | Distance to center 1 (4/3, 2) | Distance to center 2 (10/3, 17/6) | Near
 
 New center 1: (1 + 1 + 2, 1 + 3 + 2) / 3 = (4/3, 2)  
 New center 2: (3 + 3 + 3 + 3 + 4 + 4, 1 + 2 + 3 + 5 + 2 + 4) / 6 = (10/3, 17/6)
+
+Problem 2.  
+  - 2.1 
+    - ![2.1.png](./2.1.png)
+  - 2.2
+    - ![2.2.png](./2.2.png)
+  - 2.3
+    - ![2.3.png](./2.3.png)
+  - 2.4
+    - **Findings**: Clusting results of 2.2 and 2.3 are clear, while 2.1 is dubious.
