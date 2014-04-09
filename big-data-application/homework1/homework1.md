@@ -66,3 +66,20 @@ Problem 2.
     - ![2.3.png](./2.3.png)
   - 2.4
     - **Findings**: Clusting results of 2.2 and 2.3 are clear, while 2.1 is dubious.
+
+Problem 3.  
+Within each iteration, perform the following actions:
+```
+Mapper
+======
+Input: x (a data point)
+Process:
+  - Load the current centers.
+  - Get the nearest center Id.
+Output: (nearest center Id, x)
+
+Reducer
+=======
+Input: (center Id, data points)
+Output: (center Id, mean(data points))
+```
