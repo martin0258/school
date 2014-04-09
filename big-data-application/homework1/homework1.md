@@ -110,4 +110,19 @@ Output: (center Id, mean(data points))
 
 #### Problem 4
 ##### Problem 4.1
+I have no idea.
+
 ##### Problem 4.2
+K-Means algorithm minimizes the following cost function:
+```
+J(cluster assignments, centroids) = sum(square distances between each data point and the centroid it is assigned to)
+```
+The algorithm converges because each iteration necessarily lowers the cost (K-Means stops if the cost is unchanged).  
+Why necessarily lower? Because within each iteration, K-Means algorithm has two steps:
+
+1. Cluster assignment (assign data points to the closest centriod)
+2. Recenter (move centriods)
+
+The 1st step minimizes the cost function with respect to the cluster assignments (holding centroids).    
+The 2nd step minimizes the cost function with respect to the centroids (holding cluster assignments).  
+Therefore, it is necessarily that the cost becomes lower after each iteration.
