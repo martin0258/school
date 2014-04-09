@@ -18,3 +18,41 @@
   - **Regression Problem**: The type of prediction target is real value.
 
 ### Clustering
+1. 
+
+Initial centers: center 1 is (1, 1); center 2 is (4, 2)  
+Iteration 1:
+
+Point | Distance to center 1 (1, 1) | Distance to center 2 (4, 2) | Nearest
+------|-----------------------------|-----------------------------|---------
+(1,1) | 0 | sqrt(10) | center 1
+(1,3) | sqrt(4) | sqrt(10) | center 1
+(2,2) | sqrt(2) | sqrt(4) | center 1
+(3,1) | sqrt(4) | sqrt(2) | center 2
+(3,2) | sqrt(5) | sqrt(1) | center 2
+(3,3) | sqrt(8) | sqrt(2) | center 2
+(3,5) | sqrt(20) | sqrt(10) | center 2
+(4,2) | sqrt(10) | sqrt(0) | center 2
+(4,4) | sqrt(18) | sqrt(4) | center 2
+
+New center 1: (1 + 1 + 2, 1 + 3 + 2) / 3 = (4/3, 2)  
+New center 2: (3 + 3 + 3 + 3 + 4 + 4, 1 + 2 + 3 + 5 + 2 + 4) / 6 = (10/3, 17/6)
+
+--
+
+Iteration 2:
+
+Point | Distance to center 1 (4/3, 2) | Distance to center 2 (10/3, 17/6) | Nearest
+------|-----------------------------|-----------------------------|---------
+(1,1) | 1.05 | 2.97 | center 1
+(1,3) | 1.05 | 2.34 | center 1
+(2,2) | 0.67 | 1.57 | center 1
+(3,1) | 1.94 | 1.86 | center 2
+(3,2) | 1.67 | 0.90 | center 2
+(3,3) | 1.94 | 0.37 | center 2
+(3,5) | 3.43 | 2.19 | center 2
+(4,2) | 2.67 | 1.07 | center 2
+(4,4) | 3.33 | 1.34 | center 2
+
+New center 1: (1 + 1 + 2, 1 + 3 + 2) / 3 = (4/3, 2)  
+New center 2: (3 + 3 + 3 + 3 + 4 + 4, 1 + 2 + 3 + 5 + 2 + 4) / 6 = (10/3, 17/6)
