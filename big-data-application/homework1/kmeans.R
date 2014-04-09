@@ -137,7 +137,39 @@ kmeans_2.2 <- function () {
   title("2.2", outer=TRUE)
 }
 
+kmeans_2.3 <- function () {
+  # k-means algorithm settings
+  num_clusters <- 2
+  num_itr <- 30
+
+  par(oma=c(0,0,2,0))
+  par(mfrow=c(2, 3)) # 6 figures arrange in 3 row 2 columns
+  for (itr in 1:6) {
+    # Dataset is generated as below:
+    #   - Randomly pick 3 points A, B, and C on the 2-D plan.
+    #   - Take each point as mean and generate 50 points respectively
+    #     following a normal distribution that
+    #     sd = min(distance between A, B, and C) / 4
+    a <- matrix(rnorm(2), ncol=2)
+    b <- matrix(rnorm(2), ncol=2)
+    c <- matrix(rnorm(2), ncol=2)
+    min_distance <- min(dist(rbind(a, b, c)))
+    sd <- min_distance / 4
+    x_from_a <- matrix(rnorm(50 * 2, mean=a, sd=sd), ncol=2)
+    x_from_b <- matrix(rnorm(50 * 2, mean=b, sd=sd), ncol=2)
+    x_from_c <- matrix(rnorm(50 * 2, mean=c, sd=sd), ncol=2)
+    x <- rbind(x_from_a, x_from_b, x_from_c)
+    colnames(x) <- c("x", "y")
+
+    result <- kmeans(x, num_clusters, num_itr, x[1:num_clusters, ])
+    plot(x, col=result$cluster)
+    points(result$centers, col=1:num_clusters, pch=8, cex=2)
+  }
+  title("2.3", outer=TRUE)
+}
+
 # Run
 kmeans_test()
 kmeans_2.1()
 kmeans_2.2()
+kmeans_2.3()
