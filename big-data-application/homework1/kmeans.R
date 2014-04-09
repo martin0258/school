@@ -92,6 +92,7 @@ kmeans_2.1 <- function () {
   num_clusters <- 2
   num_itr <- 30
   
+  par(oma=c(0,0,2,0))
   par(mfrow=c(2, 3)) # 6 figures arrange in 3 row 2 columns
   for (itr in 1:6) {
     # Randomly generate 100 points on 2-D plane
@@ -101,11 +102,42 @@ kmeans_2.1 <- function () {
     colnames(x) <- c("x", "y")
   
     result <- kmeans(x, num_clusters, num_itr, x[1:num_clusters, ])
-    plot(x, col=result$cluster, main="K-Means Result")
+    plot(x, col=result$cluster)
     points(result$centers, col=1:num_clusters, pch=8, cex=2)
   }
+  title("2.1", outer=TRUE)
+}
+
+kmeans_2.2 <- function () {
+  # k-means algorithm settings
+  num_clusters <- 2
+  num_itr <- 30
+
+  par(oma=c(0,0,2,0))
+  par(mfrow=c(2, 3)) # 6 figures arrange in 3 row 2 columns
+  for (itr in 1:6) {
+    # Dataset is generated as below:
+    #   - Randomly pick 2 points A and B on the 2-D plan.
+    #   - Take each point as mean and generate 50 points respectively
+    #     following a normal distribution that
+    #     sd = (distance between A and B) / 4
+    a <- matrix(rnorm(2), ncol=2)
+    b <- matrix(rnorm(2), ncol=2)
+    distance <- sqrt(sum(a - b) ^ 2)
+    sd <- distance / 4
+    x_from_a <- matrix(rnorm(50 * 2, mean=a, sd=sd), ncol=2)
+    x_from_b <- matrix(rnorm(50 * 2, mean=b, sd=sd), ncol=2)
+    x <- rbind(x_from_a, x_from_b)
+    colnames(x) <- c("x", "y")
+
+    result <- kmeans(x, num_clusters, num_itr, x[1:num_clusters, ])
+    plot(x, col=result$cluster)
+    points(result$centers, col=1:num_clusters, pch=8, cex=2)
+  }
+  title("2.2", outer=TRUE)
 }
 
 # Run
 kmeans_test()
 kmeans_2.1()
+kmeans_2.2()
