@@ -6,6 +6,27 @@
   - **Mapper**: A procedure that receives `a record` and outputs `one or more (key, value) pairs`.
   - **Reducer**: A procedure that receives `a (key, values of the key)` and outputs `one or more (key, value) pairs`.
   - **Combiner**: A procedure that combines output data of mapper at a local machine before sending to shuffler.
+2. Within each iteration, perform the following actions:
+
+```
+Mapper
+======
+Input:
+  - (x, y) (a data point)
+  - i (number of iteration)
+Process: 
+  - Load current w.
+  - gradient = (y * x) / (1 + exp(y * MatrixMulti(w * x))
+Output: (i, gradient)
+
+Reducer
+=======
+Input: (i, gradients)
+Process:
+  - Load current w.
+  - w -= LEARNING_RATE * sum(gradients)
+Output: (i, w)
+```
 
 ### Analytics Overview
 1. 
