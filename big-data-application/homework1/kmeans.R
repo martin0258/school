@@ -35,7 +35,10 @@ kmeans <- function (x, k, iteration, initial_centers) {
     # Compute distances between each point and cluster centers
     distances <- matrix(ncol=k, nrow=num_points)
     for (center_idx in 1:k) {
-      square_distance <- (x - centers[center_idx, ]) ^ 2
+      # Form matrix to compute distance
+      centers_rep <- matrix(rep(centers[center_idx, ], num_points),
+                            ncol=ncol(x), byrow=T)
+      square_distance <- (x - centers_rep) ^ 2
       distances[, center_idx] <- sqrt(rowSums(square_distance))
     }
     # Assign each point to the nearest cluster
