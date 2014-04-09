@@ -2,12 +2,13 @@
 <p align="right">r01922060 顧廷緯</p>
 
 ### MapReduce
-1. 
-  - **Mapper**: A procedure that receives `a record` and outputs `one or more (key, value) pairs`.
-  - **Reducer**: A procedure that receives `a (key, values of the key)` and outputs `one or more (key, value) pairs`.
-  - **Combiner**: A procedure that combines output data of mapper at a local machine before sending to shuffler.
-2. Within each iteration, perform the following actions:
+#### Problem 1
+- **Mapper**: A procedure that receives `a record` and outputs `one or more (key, value) pairs`.
+- **Reducer**: A procedure that receives `a (key, values of the key)` and outputs `one or more (key, value) pairs`.
+- **Combiner**: A procedure that combines output data of mapper at a local machine before sending to shuffler.
 
+#### Problem 2
+Within each iteration, perform the following actions:
 ```
 Mapper
 ======
@@ -29,17 +30,19 @@ Output: (i, w)
 ```
 
 ### Analytics Overview
-1. 
-  - **Supervised Learning**: Learning from `labeled data` only.
-  - **Unsupervised Learning**: Learning from `unlabeled data` only.
-  - **Semi-supervised Learning**: Learning from both labeled (usually little) and unlabeled data.
-2. Because the outcome of tossing a coin is random (assume it is a fair coin).
-3. 
-  - **Classification Problem**: The type of prediction target is category.
-  - **Regression Problem**: The type of prediction target is real value.
+#### Problem 1
+- **Supervised Learning**: Learning from `labeled data` only.
+- **Unsupervised Learning**: Learning from `unlabeled data` only.
+- **Semi-supervised Learning**: Learning from both labeled (usually little) and unlabeled data.
+#### Problem 2
+Because the outcome of tossing a coin is random (assume it is a fair coin).
+
+#### Problem 3
+- **Classification Problem**: The type of prediction target is category.
+- **Regression Problem**: The type of prediction target is real value.
 
 ### Clustering
-Problem 1.  
+#### Problem 1.  
 
 Initial centers: center 1 is (1, 1); center 2 is (4, 2)  
 Iteration 1:
@@ -78,7 +81,7 @@ Point | Distance to center 1 | Distance to center 2 | Nearest
 New center 1: (1 + 1 + 2, 1 + 3 + 2) / 3 = (4/3, 2)  
 New center 2: (3 + 3 + 3 + 3 + 4 + 4, 1 + 2 + 3 + 5 + 2 + 4) / 6 = (10/3, 17/6)
 
-Problem 2.  
+#### Problem 2.  
   - 2.1 
     - ![2.1.png](./2.1.png)
   - 2.2
@@ -88,7 +91,7 @@ Problem 2.
   - 2.4
     - **Findings**: Clusting results of 2.2 and 2.3 are clear, while 2.1 is dubious.
 
-Problem 3.  
+#### Problem 3.  
 Within each iteration, perform the following actions:
 ```
 Mapper
@@ -104,3 +107,7 @@ Reducer
 Input: (center Id, data points)
 Output: (center Id, mean(data points))
 ```
+
+#### Problem 4
+##### Problem 4.1
+##### Problem 4.2
