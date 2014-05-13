@@ -1,3 +1,3 @@
 # School
 
-This repository is used to handle school business with clear milestone.
+This repository for handleing school works.
