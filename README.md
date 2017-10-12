@@ -1,3 +1,3 @@
 # School
 
-This repository for handleing school works.
+This repository is for handling school works.
